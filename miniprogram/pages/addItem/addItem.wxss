@@ -1,0 +1,147 @@
+/* pages/addItem/addItem.wxss */
+.page {
+  width: 100vw;
+  min-height: 100vh;
+  background: white;
+}
+
+.divider-block {
+  background: #f2f1f3;
+  width:750rpx;
+  height: 20rpx;
+}
+
+.choice-wrapper {
+  width: 750rpx;
+  height: 96rpx;
+  padding-top:20rpx;
+  background-color: white;
+}
+
+.choose {
+  background: rgb(242,241,243);
+  margin-left: 30rpx;
+  height: 76rpx;
+  width: 690rpx;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.picker {
+  height: 76rpx;
+  width: 660rpx;
+  display: flex;
+  align-items: center;
+  padding-left:30rpx;
+  font-size: 29rpx;
+  color: rgb(51, 51, 51);
+}
+
+.down-icon {
+  width: 30rpx;
+  height: 30rpx;
+  top: 25rpx;
+  right: 30rpx;
+  position: absolute;
+  z-index: 10;
+}
+
+.row {
+  height: 98rpx;
+  width:750rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.row-x {
+  min-height: 98rpx;
+  width:750rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+
+.divider {
+  height: 2rpx;
+  width: 750rpx;
+  background-color: #f2f1f3;
+}
+
+.red-sign {
+  color: rgb(235,57,57);
+  margin-left: 30rpx;
+  height: 98rpx;
+  display: flex;
+  align-items: center;
+}
+
+.tip {
+  margin-left: 5rpx;
+  font-size: 28rpx;
+  height: 98rpx;
+  width:250rpx;
+  display: flex;
+  align-items: center;
+  color: rgb(51, 51, 51);
+}
+
+.submint-btn {
+  width: 690rpx;
+  margin-left:30rpx;
+  margin-top:60rpx;
+  height: 88rpx;
+  background: rgb(86,9,222);
+  color: white;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15rpx;
+}
+
+.info-picker {
+  width: 375rpx;
+  height: 98rpx;
+  font-size: 32rpx;
+  margin-top: 28rpx;
+  text-align: right;
+  color: rgb(193,193,193);
+}
+
+.duration-picker {
+  width: 405rpx;
+  height: 98rpx;
+  font-size: 32rpx;
+  margin-top: 28rpx;
+  text-align: right;
+  color: rgb(51, 51, 51);
+}
+
+.input-content {
+  font-size: 32rpx;
+  text-align: right;
+  color: rgb(51, 51, 51);
+  width: 445rpx;
+  margin-top: 28rpx;
+  margin-bottom: 28rpx;
+}
+
+.icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 14rpx;
+  margin-top: 35rpx;
+}
+
+.timer-picker {
+  width: 75rpx;
+  height: 98rpx;
+  font-size: 32rpx;
+  margin-top: 28rpx;
+  text-align: right;
+  color: rgb(193,193,193);
+}

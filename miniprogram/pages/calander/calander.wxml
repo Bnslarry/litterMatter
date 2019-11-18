@@ -1,0 +1,94 @@
+<!--pages/calander/calander.wxml-->
+<view class="page">
+  <navigation-bar loading="{{loading}}" show="{{show}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="日程小程序" back="{{false}}"></navigation-bar>
+  <view class="top-bar">
+    <image class="arrow-back" src="../../images/back.png" mode="aspectFit"></image>
+    <view class="date-tip">2019年11月</view>
+    <image class="arrow-go" src="../../images/go.png" mode="aspectFit"></image>
+  </view>
+  <view class="color-tip">
+    <view class="color-tip1" style="margin-left:60vw;">
+      <view class="squart" style="background-color: rgb(47,233,130)"></view>
+      <view class="text">出差</view>
+    </view>
+    <view class="color-tip1" style="margin-left:30rpx;">
+      <view class="squart" style="background-color: rgb(255,165,45)"></view>
+      <view class="text">会议</view>
+    </view>
+    <view class="color-tip1" style="margin-left:30rpx;">
+      <view class="squart" style="background-color: rgb(99,195,253)"></view>
+      <view class="text">休假</view>
+    </view>
+  </view>
+
+  <view class="board-wrapper">
+    <view class="left-wrapper">
+      <view class="space-block"></view>
+      <view class="morining-wrapper">上  午</view>
+      <view class="afternoon-wrapper">下  午</view>
+    </view>
+    <view class="right-wrapper">
+      <view class="date-bar">
+        <view class="date-block">
+          <view class="weekday">一</view>
+          <view class="date">11</view>
+        </view>
+        <view class="date-block">
+          <view class="weekday">二</view>
+          <view class="date">12</view>
+        </view>
+        <view class="date-block">
+          <view class="weekday">三</view>
+          <view class="date">13</view>
+        </view>
+        <view class="date-block">
+          <view class="weekday">四</view>
+          <view class="date">14</view>
+        </view>
+        <view class="date-block">
+          <view class="weekday">五</view>
+          <view class="date">15</view>
+        </view>
+        <view class="date-block">
+          <view class="weekday">六</view>
+          <view class="date">16</view>
+        </view>
+        <view class="date-block">
+          <view class="weekday">日</view>
+          <view class="date">17</view>
+        </view>
+      </view>
+      <view class="info-wrapper">
+        <view wx:for="{{mDayArray}}" class="day-info" wx:key="">
+          <view class="day-morning">
+            <view wx:if="{{mDayArray[index]==0}}">
+              <view wx:for="{{mArray[index]}}" wx:for-index="idx">
+                <view wx:if="{{mArray[index][idx] == 0}}" class="free"></view>
+                <view wx:if="{{mArray[index][idx] == 1}}" class="busy">
+                  <view class="time">10:00</view>
+                  <view class="location">5号会议室</view>
+                  <view class="name">双周例会</view>
+                </view>
+              </view>
+            </view>
+            <view wx:if="{{mDayArray[index]==1}}" class="vacation">休假</view>
+            <view wx:if="{{mDayArray[index]==2}}" class="travel">出差</view>
+          </view>
+          <view class="day-afternoon">
+            <view wx:if="{{aDayArray[index]==0}}">
+              <view wx:for="{{aArray[index]}}" wx:for-index="idx">
+                <view wx:if="{{aArray[index][idx] == 0}}" class="free"></view>
+                <view wx:if="{{aArray[index][idx] == 1}}" class="busy"></view>
+              </view>
+            </view>
+            <view wx:if="{{aDayArray[index]==1}}" class="vacation">休假</view>
+            <view wx:if="{{aDayArray[index]==2}}" class="travel">出差</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <image class="add-icon" src="../../images/add-icon.png" mode="aspectFit" bindtap="gotoAddItem"></image>
+
+</view>

@@ -1,0 +1,121 @@
+<!--pages/addItem/addItem.wxml-->
+<view class="page">
+  <navigation-bar loading="{{loading}}" show="{{show}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="日程小程序" back="true"></navigation-bar>
+  <view class="choice-wrapper">
+    <view class="choose">
+      <picker bindchange="bindTypePickerChange" value="{{typeIndex}}" range="{{pickerTypes}}">
+          <view class="picker">{{pickerTypes[typeIndex]}}</view>
+      </picker>
+      <image class="down-icon" src="../../images/down-icon.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <view class="divider-block"></view>
+
+  <view wx:if="{{typeIndex==0}}">
+    <view class="row">
+      <view class="red-sign">＊</view>
+      <view class="tip">会议日期</view>
+      <picker mode="date" value="{{date}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+          <view class="info-picker">{{date}}</view>
+      </picker>
+      <image class="icon" src="../../images/calander-icon.png" mode="aspectFit"></image>
+    </view>
+    <view class="divider"></view>
+    <view class="row">
+      <view class="red-sign">＊</view>
+      <view class="tip">会议开始时间</view>
+      <picker mode="time" value="{{meetingStartTime}}" start="08:00" end="18:30" bindchange="bindTimeChange">
+          <view class="info-picker">{{meetingStartTime}}</view>
+      </picker>
+      <image class="icon" src="../../images/clock-icon.png" mode="aspectFit"></image>
+    </view>
+    <view class="divider"></view>
+    <view class="row">
+      <view class="tip" style="margin-left:30rpx;">会议时长</view>
+      <picker bindchange="bindDurationPickerChange" value="{{durationIndex}}" range="{{pickerDurations}}">
+          <view class="duration-picker">{{pickerDurations[durationIndex]}}</view>
+      </picker>
+      <image class="icon" src="../../images/down-icon.png" mode="aspectFit"></image>
+    </view>
+    <view class="divider"></view>
+    <view class="row-x">
+      <view class="tip" style="margin-left:30rpx;">会议地点</view>
+      <textarea auto-height="true" class="input-content" placeholder="请输入具体地点" bindblur="getMeetingLocation"></textarea>
+    </view>
+    <view class="divider"></view>
+    <view class="row-x">
+      <view class="tip" style="margin-left:30rpx;">会议事由</view>
+      <textarea auto-height="true" class="input-content" placeholder="请输入具体事由" bindblur="getMeetingMatter"></textarea>
+    </view>
+    <view class="divider"></view>
+  </view>
+
+  <view wx:if="{{typeIndex==2}}">
+    <view class="row">
+      <view class="red-sign">＊</view>
+      <view class="tip">开始日期</view>
+      <picker mode="date" value="{{travelStartDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+          <view class="info-picker" style="width:275rpx; margin-right:25rpx;">{{date}}</view>
+      </picker>
+      <picker bindchange="" value="{{startTimeIndex}}" range="{{pickerStartTimes}}">
+          <view class="timer-picker">{{pickerStartTimes[startTimeIndex]}}</view>
+      </picker>
+      <image class="icon" src="../../images/calander-icon.png" mode="aspectFit"></image>
+    </view>
+    <view class="divider"></view>
+    <view class="row">
+      <view class="red-sign">＊</view>
+      <view class="tip">结束日期</view>
+      <picker mode="date" value="{{travelEndDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+          <view class="info-picker" style="width:275rpx; margin-right:25rpx;">{{date}}</view>
+      </picker>
+      <picker bindchange="" value="{{endTimeIndex}}" range="{{pickerEndTimes}}">
+          <view class="timer-picker">{{pickerEndTimes[endTimeIndex]}}</view>
+      </picker>
+      <image class="icon" src="../../images/calander-icon.png" mode="aspectFit"></image>
+    </view>
+    <view class="divider"></view>
+  </view>
+
+  <view wx:if="{{typeIndex==1}}">
+    <view class="row">
+      <view class="red-sign">＊</view>
+      <view class="tip">开始日期</view>
+      <picker mode="date" value="{{vocationStartDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+          <view class="info-picker" style="width:275rpx; margin-right:25rpx;">{{date}}</view>
+      </picker>
+      <picker bindchange="" value="{{startTimeIndex}}" range="{{pickerStartTimes}}">
+          <view class="timer-picker">{{pickerStartTimes[startTimeIndex]}}</view>
+      </picker>
+      <image class="icon" src="../../images/calander-icon.png" mode="aspectFit"></image>
+    </view>
+    <view class="divider"></view>
+    <view class="row">
+      <view class="red-sign">＊</view>
+      <view class="tip">结束日期</view>
+      <picker mode="date" value="{{vocationEndDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+          <view class="info-picker" style="width:275rpx; margin-right:25rpx;">{{date}}</view>
+      </picker>
+      <picker bindchange="" value="{{startTimeIndex}}" range="{{pickerStartTimes}}">
+          <view class="timer-picker">{{pickerStartTimes[startTimeIndex]}}</view>
+      </picker>
+      <image class="icon" src="../../images/calander-icon.png" mode="aspectFit"></image>
+    </view>
+    <view class="divider"></view>
+    <view class="row-x">
+    <view class="red-sign">＊</view>
+      <view class="tip" style="width: 217rpx;">出差地点</view>
+      <textarea auto-height="true" class="input-content" placeholder="请输入具体地点" bindblur="getTravelLocation"></textarea>
+    </view>
+    <view class="divider"></view>
+    <view class="row-x">
+      <view class="tip" style="margin-left:30rpx;">出差事由</view>
+      <textarea auto-height="true" class="input-content" placeholder="请输入具体事由" bindblur="getTravelMatter"></textarea>
+    </view>
+    <view class="divider"></view>
+  </view>
+
+  <view class="submint-btn">提交</view>
+
+</view>
